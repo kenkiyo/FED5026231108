@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries Demo</title>
+    <style>
+        body {
+            background-color: tan;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .box {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        .menu {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .menu a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 25%;
+            padding: 20px;
+            background-color: lightgray;
+        }
+
+        .hidden-on-small {
+            display: block;
+            background-color: salmon;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 992px) {
+            body {
+                background-color: blue;
+            }
+            .column {
+                flex: 50%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: olive;
+            }
+            .menu a {
+                float: none;
+                width: 100%;
+            }
+            .columns {
+                flex-direction: column;
+            }
+            .column {
+                flex: 100%;
+            }
+            .hidden-on-small {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Media Queries Demo</h1>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="columns">
+            <div class="column box">Column 1</div>
+            <div class="column box">Column 2</div>
+            <div class="column box">Column 3</div>
+            <div class="column box">Column 4</div>
+        </div>
+        <div class="hidden-on-small">I will be hidden on small screens.</div>
+    </div>
+</body>
+</html>
